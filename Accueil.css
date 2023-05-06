@@ -1,0 +1,159 @@
+
+body{
+  background: linear-gradient(to right, #606c88, #3f4c6b);
+}
+ul  {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+p{
+  text-decoration: none;
+  color: white;
+}
+  li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+.navbar-brand img{
+  height: 70%;
+  width: 60%;
+}
+.nav-link img{
+  height: 30%;
+  width: 40%;
+}
+.navbar {
+	background-color: #333;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+  }
+  
+  .nav-list {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+  }
+  .navbar img{
+    height: 60px;
+    width: 60px;
+  }
+  .nav-item {
+	margin-left: 20px;
+  }
+  
+  .nav-item a {
+	color: #fff;
+	text-decoration: none;
+	padding: 5px;
+	transition: all 0.3s ease;
+  }
+  .nav-item img{
+    height: 30px;
+    width: 30px;
+  }
+  .nav-item a:hover {
+	background-color: #555;
+	border-radius: 5px;
+  }
+  
+  .dropdown-menu {
+	position: absolute;
+	background-color: #333;
+	padding: 10px;
+	display: none;
+  }
+  
+  .dropdown-menu li {
+	margin-bottom: 10px;
+  }
+  
+  .dropdown-toggle:hover + .dropdown-menu {
+	display: block;
+  }
+  
+.container-fluid{
+  background: linear-gradient(to right, #606c88, #3f4c6b);
+}
+
+h2{
+  color: rgb(0, 0, 0);
+}
+
+.ligne {
+  display: flex;
+}
+.carré{
+  height: 450px;
+  width: 300px;
+  background: rgb(255, 252, 252);
+  margin-left: 100px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  margin: 3 10px;
+  flex-direction: column;
+
+}
+.carré img{
+  max-height:70%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-left: 70px;
+  height: auto;
+  margin-right: 70px;
+}
+.Titre {
+  color: #000000;
+  text-align: center;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+.Titre strong{
+  color: #1a58aa;
+  font-size: 22px;
+}
+.carré button{
+  background-color: #2e066e; 
+  color: #fff; 
+  font-size: 1.2em; 
+  padding: 10px 20px;
+  border: none; /* Supprime la bordure */
+  border-radius: 4px; /* Arrondi les coins du bouton */
+  cursor: pointer; /* Change le curseur de la souris en pointeur */
+  transition: background-color 0.3s ease;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  
+}
+
+.carré button:hover {
+  background-color: #04a8da; /* Couleur de fond au survol */
+}
+
+footer{
+ background-color: gray;
+ margin-top: 50px;
+}
+footer p{
+  color: black;
+}
+.col-md-6{
+text-decoration: none;
+}
+.social img{
+  width: 50px;
+}
+ 
