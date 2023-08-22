@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+{% block body %}
+<head>
+  <title>Galaxie Store</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{{ asset('css/Accueil.css') }}">
+</head>
+
+<body>
+{% include 'header.html.twig' %}
+  </header>
+
+ <div id="carouselExampleCaptions" class="carousel slide" data-bs-interval="5000">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+      aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+      aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="Zelda.html" style="text-decoration: none;">
+        <img src="{{ asset('image/SLIDER-zelda-tears-of-the-kingdom-collector-switch.jpg') }}" class="d-block w-100"
+          alt="zelda collector">
+        <div class="carousel-caption">
+          <h2>The Legend Of Zelda Tears Of The Kingdom Edition Collector SWITCH</h2>
+          <p>Repoussez les limites de la nouvelle aventure de Link et repoussez les limites de
+            celle-ci avec l’édition Collector The Legend of Zelda: Tears of the Kingdom </p>
+        </div>
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="Persona 5 royal.html" style="text-decoration: none;">
+        <img src="{{ asset('image/830180.png') }}" class="d-block w-100" alt="Persona 5 royal">
+        <div class="carousel-caption">
+          <h2>Persona 5 Royal</h2>
+          <p>Persona 5 Royal est une version enrichie et traduite en français de Persona 5. Elle nous prolonge les
+            aventures de Joker et des Phantom puisque le titre nous fait vivre
+            trois mois supplémentaires dans le calendrier scolaire du héros.</p>
+        </div>
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="Horizon.html" style="text-decoration: none;">
+        <img src="{{ asset('image/1148909.jpg') }}" class="d-block w-100" alt="Horizon">
+        <div class="carousel-caption">
+          <h2>Horizon Zero Dawn: The Frozen Wilds</h2>
+          <p>Rejoignez Aloy dans l'Ouest Interdit : un endroit majestueux, mais dangereux, qui regorge de nouvelles
+            menaces toutes plus mystérieuses les unes que les autres. Explorez des terres lointaines, affrontez des
+            machines encore plus imposantes et plus impressionnantes, et croisez la route de nouvelles tribus étonnantes
+            sur votre chemin de retour vers le monde post-apocalyptique et futuriste d'Horizon.</p>
+        </div>
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="assassin's creed origins.html" style="text-decoration: none;">
+        <img src="{{ asset('image/origins.jpg') }}" class="d-block w-100" alt="assassin's creed origins">
+        <div class="carousel-caption">
+          <h2>Assassin's Creed Origins</h2>
+          <p>Assassin's Creed® Origins, qui se déroule dans la mystérieuse Égypte ancienne, constitue un nouveau
+            commencement. Découvrez une nouvelle façon de vous battre tout en explorant les grandes pyramides et les
+            tombeaux cachés de l'Égypte ancienne, rencontrez de nombreux personnages aux histoires mémorables au cours
+            de votre périple, et découvrez l'histoire des origines de la Confrérie des Assassins.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Précedent</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Suivant</span>
+  </button>
+</div>
+
+
+<!-- templates/jeu/prochainement.html.twig -->
+<h1>Prochainement</h1>
+<div class="ligne">
+    {% for jeu in jeu %}
+        <div class="carré">
+            <img src="{{ asset(jeu.image) }}" alt="{{ jeu.nom }}">
+            <div class="Titre">
+                <a href="{{ path('jeu_details', {'id': jeu.id}) }}">{{ jeu.nom }}</a>
+                <br>
+                <strong>{{ jeu.prix }}€</strong>
+            </div>
+            <form action="{{ path('panier_add', {'id': jeu.id}) }}" method="post" class="ajouter-au-panier-form">
+                <button type="submit">Ajouter au panier</button>
+            </form>
+        </div>
+    {% endfor %}
+</div>
+
+
+{# <script>
+  // Utilisez JavaScript pour soumettre automatiquement le formulaire lorsque l'utilisateur clique sur le bouton "Ajouter au panier"
+  const ajouterAuPanierForms = document.querySelectorAll('.ajouter-au-panier-form');
+  ajouterAuPanierForms.forEach(form => {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      this.submit();
+    });
+  });
+</script> #}
+
+
+
+
+{# <h1>Nouveautés</h1>
+<div class="ligne">
+  {% for nouveaute in nouveautes %} 
+    <div class="carré">
+      <img src="{{ nouveaute.image }}" alt="{{ nouveaute.nom }}">
+      <div class="Titre">
+        <a>{{ nouveaute.nom }}</a>
+        <br>
+        <strong>{{ nouveaute.prix }}</strong>
+      </div>
+      <button>Ajouter au panier</button>
+    </div>
+  {% endfor %}
+</div> #}
+
+
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>A propos</h3>
+          <p>Gaming Galaxy est une boutique en ligne de jeux vidéo passionnée par la découverte de nouveaux jeux et la satisfaction de ses clients grâce à une sélection de qualité et un service exceptionnel.</p>
+        </div>
+        <div class="col-md-6">
+          <h3>Contactez-nous</h3>
+          <ul>
+            <li><a href="tel:0631409892">0631409892</a></li>
+            <li><a href="gaelnasala@gmail.com">gaelnasala@gmail.com</a></li>
+            <li><a href="#">Nous rejoindre</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="social">
+            <h3>Suivez-nous</h3>
+            <ul>
+              <li><a href="#"><img src="/image/twitter-black-shape_icon-icons.com_73358.png" alt=""></a></li>
+              <li><a href="#"><img src="/image/Facebook.png" alt=""></a></li>
+              <li><a href="#"><img src="/image/social_media_tik_tok_video_application_logo_brand_icon_197350.png" alt=""></a></li>
+              <li><a href="#"><img src="/image/instagram_f_icon-icons.com_65485 (1).png" alt=""></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  {% endblock %}
+
+</body>
+
+</html>

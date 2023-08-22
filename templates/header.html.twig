@@ -1,0 +1,36 @@
+<header>
+    <nav class="navbar">
+        <a href="{{ path('home') }}">
+            <img src="{{ asset('image/Capture d’écran (5).png') }}" alt="Logo">
+        </a>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="{{ path('home') }}">Accueil</a></li>
+            <li class="nav-item"><a href="#">Nouveautés</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Genres</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Aventure</a></li>
+                    <li><a href="#">Course</a></li>
+                    <li><a href="#">RPG</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Plateforme</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Nintendo switch</a></li>
+                    <li><a href="#">PC</a></li>
+                    <li><a href="#">PS5</a></li>
+                    <li><a href="#">Xbox x series</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="{{ path('about') }}">A propos</a></li>
+            <li class="nav-item"><a href="{{ path('contact') }}">Contact</a></li>
+        </ul>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="{{ path('inscription') }}">Inscription</a></li>
+            <li class="nav-item"><a href="{{ path('connexion') }}">Connexion</a></li>
+            <li class="nav-item"><a href="{{ path('index') }}"><img src="{{ asset('image/panier.png') }}" alt="Panier"></a></li>
+        </ul>
+    </nav>
+</header>

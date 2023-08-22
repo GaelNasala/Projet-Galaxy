@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mon Site{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+      <link rel="stylesheet" href="{{ asset('css/Accueil.css') }}">
+      
+
+    <!-- Autres balises <link> ou <script> nécessaires pour votre mise en page -->
+</head>
+<body>
+    <!-- Contenu de la page -->
+    {% block body %}{% endblock %}
+    <!-- Scripts JavaScript nécessaires pour Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+    <!-- Autres scripts JavaScript nécessaires pour votre mise en page -->
+</body>
+</html>

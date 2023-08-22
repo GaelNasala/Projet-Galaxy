@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ jeu.nom }}</title>
+    {% include 'header.html.twig' %}
+    <link rel="stylesheet" href="{{ asset('jeux.css') }}">
+</head>
+<body>
+    <main>
+        <h1>{{ jeu.nom }}</h1>
+
+        <section id="Payer">
+            <img src="{{ asset(jeu.image) }}" alt="{{ jeu.nom }}">
+            <form action="{{ path('panier_add', {'id': jeu.id}) }}" method="post" class="ajouter-au-panier-form">
+                <button type="submit">Ajouter au panier</button>
+            </form>
+        </section>
+
+        <section id="description">
+            <h2>Description du jeu</h2>
+            <p>{{ jeu.description }}</p>
+        </section>
+
+        <section id="screenshots">
+            <h2>Captures d'écran</h2>
+            {% for screenshot in jeu.screenshots %}
+                <img src="{{ asset(screenshot) }}" alt="Capture d'écran {{ loop.index }}">
+            {% endfor %}
+        </section>
+
+        <section id="video">
+            <h2>Vidéo de présentation</h2>
+            <iframe width="560" height="315" src="{{ asset(jeu.video) }}" frameborder="0" allowfullscreen></iframe>
+        </section>
+
+        <section id="features">
+            <h2>Caractéristiques principales</h2>
+            <ul>
+                {% for feature in jeu.features %}
+                    <li>{{ feature }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    {% include 'footer.html.twig' %}
+</body>
+</html>
